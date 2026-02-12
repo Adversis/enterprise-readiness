@@ -119,9 +119,8 @@ const html = `<!DOCTYPE html>
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 
-  <!-- Botpoison (temporarily disabled)
+  <!-- Botpoison -->
   <script src="https://unpkg.com/@botpoison/browser"></script>
-  -->
 
   <script>
     // Compiled app code

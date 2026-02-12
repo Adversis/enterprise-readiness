@@ -659,10 +659,12 @@ const EmailGate = ({ onComplete }) => {
     setLoading(true);
 
     try {
+      const botpoison = new window.Botpoison({ publicKey: 'pk_b7f0e43f-d82a-424c-9d10-d043784a38b4' });
+      const { solution } = await botpoison.challenge();
       await fetch('https://submit-form.com/VL1qRrueE', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ email, source: 'enterprise-readiness-assessment' }),
+        body: JSON.stringify({ email, source: 'enterprise-readiness-assessment', _botpoison: solution }),
       });
     } catch (err) {
       // Soft gate — let them through on network failure
@@ -1163,6 +1165,8 @@ const Results = ({ answers, onRetake }) => {
               if (contactRequested || contactLoading) return;
               setContactLoading(true);
               try {
+                const botpoison = new window.Botpoison({ publicKey: 'pk_b7f0e43f-d82a-424c-9d10-d043784a38b4' });
+                const { solution } = await botpoison.challenge();
                 await fetch('https://submit-form.com/VL1qRrueE', {
                   method: 'POST',
                   headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
@@ -1171,6 +1175,7 @@ const Results = ({ answers, onRetake }) => {
                     source: 'enterprise-readiness-results-contact',
                     totalScore,
                     stage: stage.name,
+                    _botpoison: solution,
                   }),
                 });
               } catch (err) {
