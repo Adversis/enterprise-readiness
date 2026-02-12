@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --color-coral-50: #FEF2F2;
+  --color-coral-100: #FDE8E8;
+  --color-coral-200: #FACACA;
+  --color-coral-300: #F8A5A6;
+  --color-coral-400: #F47E80;
+  --color-coral-500: #F05F62;
+  --color-coral-600: #D94548;
+  --color-coral-700: #B63336;
+  --color-coral-800: #962C2E;
+  --color-coral-900: #7C292B;
+
+  --color-navy: #161131;
+  --color-navy-50: #E8E6F0;
+  --color-navy-100: #D1CDE1;
+  --color-navy-200: #A39BC3;
+  --color-navy-300: #7569A5;
+  --color-navy-400: #473787;
+  --color-navy-500: #161131;
+  --color-navy-600: #120E28;
+  --color-navy-700: #0E0A1E;
+  --color-navy-800: #0A0715;
+  --color-navy-900: #05030B;
+
+  --color-teal-50: #F0FAF9;
+  --color-teal-100: #E0F5F3;
+  --color-teal-200: #C1EBE7;
+  --color-teal-300: #9FD9D5;
+  --color-teal-400: #7DC7C2;
+  --color-teal-500: #5BB5AF;
+  --color-teal-600: #49918C;
+  --color-teal-700: #376D69;
+  --color-teal-800: #254946;
+  --color-teal-900: #122423;
+
+  --color-gold: #FCCE11;
+  --color-gold-50: #FFFBE6;
+  --color-gold-100: #FFF7CC;
+  --color-gold-200: #FFEF99;
+  --color-gold-300: #FFE766;
+  --color-gold-400: #FEDF33;
+  --color-gold-500: #FCCE11;
+  --color-gold-600: #D4AD0E;
+  --color-gold-700: #AC8C0B;
+  --color-gold-800: #846B09;
+  --color-gold-900: #5C4A06;
+}

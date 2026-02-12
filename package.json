@@ -1,0 +1,16 @@
+{
+  "name": "ent-ready-self-assess",
+  "version": "1.0.0",
+  "description": "Enterprise Security Readiness Self-Assessment tool",
+  "scripts": {
+    "build": "node build-standalone.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/preset-react": "^7.22.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.18",
+    "tailwindcss": "^4.1.18"
+  }
+}
