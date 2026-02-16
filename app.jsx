@@ -526,7 +526,7 @@ const RadarChart = ({ scores, size = 400 }) => {
 
   const labelPositions = Array.from({ length: 5 }, (_, i) => {
     const angle = startAngle + i * angleStep;
-    const labelR = radius + 30;
+    const labelR = radius + 22;
     return {
       x: center + labelR * Math.cos(angle),
       y: center + labelR * Math.sin(angle),
@@ -535,7 +535,8 @@ const RadarChart = ({ scores, size = 400 }) => {
   });
 
   return (
-    <svg viewBox={`0 0 ${size} ${size}`} overflow="visible" className="w-full max-w-sm mx-auto">
+    <div className="w-full max-w-sm mx-auto px-4">
+    <svg viewBox={`0 0 ${size} ${size}`} overflow="visible" className="w-full">
       {/* Grid polygons */}
       {gridPolygons.map((points, i) => (
         <polygon
@@ -605,6 +606,7 @@ const RadarChart = ({ scores, size = 400 }) => {
         </text>
       ))}
     </svg>
+    </div>
   );
 };
 
@@ -782,7 +784,7 @@ const QuestionCard = ({ question, questionNumber, selectedScore, onSelect, refCa
           {expanded ? 'Hide context' : 'Why this matters'}
         </button>
         {expanded && (
-          <p className="text-sm text-gray-500 mt-2 leading-relaxed bg-gray-50 rounded-lg p-3">
+          <p className="text-sm text-gray-500 mt-2 leading-relaxed bg-gray-50 rounded-lg p-3 break-words">
             {question.whyItMatters}
           </p>
         )}
@@ -823,7 +825,7 @@ const QuestionCard = ({ question, questionNumber, selectedScore, onSelect, refCa
                 <div className={`text-sm font-semibold ${isSelected ? 'text-navy' : 'text-gray-700'}`}>
                   {option.label}
                 </div>
-                <div className="text-xs text-gray-500 mt-0.5 leading-relaxed">
+                <div className="text-xs text-gray-500 mt-0.5 leading-relaxed break-words">
                   {option.description}
                 </div>
               </div>
@@ -902,7 +904,7 @@ const Assessment = ({ answers, setAnswers, onComplete }) => {
                     isComplete ? 'bg-gold' : isCurrent ? 'bg-teal-300' : 'bg-gray-200'
                   }`}
                 />
-                <p className={`text-xs mt-1.5 truncate ${isCurrent ? 'text-navy font-semibold' : 'text-gray-400'}`}>
+                <p className={`text-xs mt-1.5 truncate hidden sm:block ${isCurrent ? 'text-navy font-semibold' : 'text-gray-400'}`}>
                   {dim.name}
                 </p>
               </div>
@@ -1022,7 +1024,7 @@ const Results = ({ answers, onRetake }) => {
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-10 text-center mb-6 fade-in">
           <p className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">Your Readiness Score</p>
           <div className="count-up">
-            <span className="text-7xl md:text-8xl font-extrabold text-navy">{animatedScore}</span>
+            <span className="text-6xl sm:text-7xl md:text-8xl font-extrabold text-navy">{animatedScore}</span>
             <span className="text-2xl text-gray-300 font-bold ml-1">/75</span>
           </div>
           <div className="mt-4">

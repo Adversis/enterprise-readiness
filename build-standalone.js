@@ -103,6 +103,11 @@ const html = `<!DOCTYPE html>
     .count-up { animation: countUp 0.6s ease-out; }
     @keyframes slideIn { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: translateX(0); } }
     .slide-in { animation: slideIn 0.3s ease-out; }
+    @media (prefers-reduced-motion: reduce) {
+      .fade-in, .count-up, .slide-in { animation: none; }
+      .animate-spin { animation-duration: 3s; }
+      * { transition-duration: 0.01ms !important; }
+    }
   </style>
 </head>
 <body class="bg-[#FAFBFC]">
