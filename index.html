@@ -64,6 +64,9 @@
     ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 5px; }
     ::-webkit-scrollbar-thumb:hover { background: #64748b; }
     #root { min-height: 100vh; }
+    .h-screen { height: 100vh; }
+    .overflow-y-auto { overflow-y: auto; }
+    .my-auto { margin-block: auto; }
     body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     .fade-in { animation: fadeIn 0.4s ease-out; }
@@ -964,9 +967,9 @@ const EmailGate = ({
     onComplete();
   };
   return /*#__PURE__*/React.createElement("div", {
-    className: "min-h-screen bg-[#FAFBFC] flex items-center justify-center p-4"
+    className: "h-screen bg-[#FAFBFC] flex items-start justify-center p-4 overflow-y-auto"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "max-w-xl w-full fade-in"
+    className: "max-w-xl w-full fade-in my-auto"
   }, /*#__PURE__*/React.createElement("div", {
     className: "text-center mb-8"
   }, /*#__PURE__*/React.createElement("img", {
